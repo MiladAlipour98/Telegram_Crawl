@@ -4,11 +4,11 @@ import socks
 
 es = Elasticsearch('http://localhost:9200')
 
-api_id = 20404256
-api_hash = '7ca51ccca81f9973bd2e0adbbd45d88a'
+api_id = 
+api_hash = ''
 client = TelegramClient('milad', api_id, api_hash, proxy=(socks.SOCKS5, '127.0.0.1', 1080))
 
-@client.on(events.NewMessage('ina_hw2_test'))
+@client.on(events.NewMessage('ina_test'))
 async def my_event_handler(event):
     print(event.text, event.id)
 
@@ -22,7 +22,7 @@ async def my_event_handler(event):
     print(resp['result'])
 
     if resp['result'] == "created" or resp['result'] == "updated":
-        await client.send_message('ina_hw2_test', 'your message successfully saved in database', reply_to=event.id)
+        await client.send_message('ina_test', 'your message successfully saved in database', reply_to=event.id)
 
 
 client.start()
