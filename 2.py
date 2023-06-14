@@ -6,8 +6,8 @@ import socks
 
 es = Elasticsearch('http://localhost:9200')
 
-api_id = 20404256
-api_hash = '7ca51ccca81f9973bd2e0adbbd45d88a'
+api_id = 
+api_hash = ''
 client = TelegramClient('milad', api_id, api_hash, proxy=(socks.SOCKS5, '127.0.0.1', 1080))
 
 
